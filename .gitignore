@@ -1,0 +1,7 @@
+security-checker
+debian/debhelper-build-stamp
+debian/files
+debian/sensiolabs-security-checker
+debian/sensiolabs-security-checker.debhelper.log
+debian/sensiolabs-security-checker.substvars
+debian/.debhelper

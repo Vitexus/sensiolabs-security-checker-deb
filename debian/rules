@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+# You must remove unused comment lines for the released package.
+#export DH_VERBOSE = 1
+#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	rm -rfv security-checker
+	dh_auto_clean
+
+override_dh_prep:
+	git clone https://github.com/sensiolabs/security-checker.git
+	composer install --working-dir=security-checker  --no-dev
+	php -d phar.readonly=off /usr/bin/phar-composer -n build --ansi sensiolabs/security-checker
+	dh_prep
+
+override_dh_auto_install:
+	dh_auto_install -- prefix=/usr
+	mkdir -p debian/sensiolabs-security-checker/usr/bin
+	mv security-checker.phar	debian/sensiolabs-security-checker/usr/bin/security-checker
+
+#override_dh_install:
+#       dh_install --list-missing -X.pyc -X.pyo
+

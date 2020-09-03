@@ -1,0 +1,5 @@
+sensiolabs-security-checker (6.0.3) UNRELEASED; urgency=medium
+
+  * Phar Based build
+
+ -- CyberVitexus <vitex@exiv.jinonice.czf>  Sun, 09 Aug 2020 15:30:39 +0200

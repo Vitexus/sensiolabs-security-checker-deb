@@ -1,0 +1,16 @@
+Source: sensiolabs-security-checker
+Section: security
+Priority: optional
+Maintainer: "Vítězslav Dvořák" <info@vitexsoftware.cz>
+Build-Depends: debhelper (>=11~),composer,git
+Standards-Version: 4.1.4
+Homepage: https://github.com/sensiolabs/security-checker.git
+
+Package: sensiolabs-security-checker
+Multi-Arch: foreign
+Depends: ${misc:Depends}, php-cli
+Architecture: all
+Description: PHP frontend for security.symfony.com
+ The SensioLabs Security Checker is a command line tool that checks if 
+ your application uses dependencies with known security vulnerabilities. 
+ It uses the Security Check Web service and the Security Advisories Database.
