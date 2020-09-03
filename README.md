@@ -27,3 +27,13 @@ security-checker security:check ../path/to/composer.lock
 
 See also: https://github.com/VitexSoftware/netbeans-php-tools
 
+
+You can also apply to find command output:
+
+```shell
+find . -type f -name \composer.lock -exec security-checker security:check  {} \;
+```
+![Errors](errors.png?raw=true)
+
+
+
