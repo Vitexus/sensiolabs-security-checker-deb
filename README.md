@@ -1,3 +1,5 @@
+![logo](sensiolabs-security-checker.svg?raw=true)
+
 SensioLabs Security Checker
 ===========================
 
